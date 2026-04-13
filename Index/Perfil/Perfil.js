@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const likedSongsInput = document.getElementById('profileLikedSongs');
     const playlistsCreatedInput = document.getElementById('profilePlaylistsCreated');
     const favoriteArtistsInput = document.getElementById('profileFavoriteArtists');
+    const profilePhotoInput = document.getElementById('profilePhoto');
+    const avatarPreview = document.getElementById('avatarPreview');
 
     const defaultProfile = {
         name: 'Gabriel Davi',
@@ -28,7 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
         description: 'Bem-vindo ao seu espaço musical. Veja suas estatísticas, playlists favoritas e artistas que você mais escuta.',
         likedSongs: 128,
         playlistsCreated: 12,
-        favoriteArtists: 34
+        favoriteArtists: 34,
+        photo: ''
     };
 
     let profileData = JSON.parse(localStorage.getItem('profileData')) || defaultProfile;
@@ -48,11 +51,17 @@ document.addEventListener('DOMContentLoaded', function() {
             <span>${profileData.subscription}</span>
             <span>Plano: ${profileData.plan}</span>
         `;
-        profileAvatar.textContent = getInitials(profileData.name);
+        if (profileData.photo) {
+            profileAvatar.innerHTML = `<img src="${profileData.photo}" alt="Avatar">`;
+        } else {
+            profileAvatar.textContent = getInitials(profileData.name);
+        }
         likedSongsValue.textContent = profileData.likedSongs;
         playlistsCreatedValue.textContent = profileData.playlistsCreated;
         favoriteArtistsValue.textContent = profileData.favoriteArtists;
     }
+
+    let newPhotoData = '';
 
     function openModal() {
         nameInput.value = profileData.name;
@@ -62,8 +71,34 @@ document.addEventListener('DOMContentLoaded', function() {
         likedSongsInput.value = profileData.likedSongs;
         playlistsCreatedInput.value = profileData.playlistsCreated;
         favoriteArtistsInput.value = profileData.favoriteArtists;
+        profilePhotoInput.value = '';
+        newPhotoData = '';
+        if (profileData.photo) {
+            avatarPreview.src = profileData.photo;
+            avatarPreview.style.display = 'block';
+        } else {
+            avatarPreview.src = '';
+            avatarPreview.style.display = 'none';
+        }
         profileModal.style.display = 'flex';
     }
+
+    profilePhotoInput.addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (!file) {
+            newPhotoData = '';
+            avatarPreview.src = profileData.photo || '';
+            avatarPreview.style.display = profileData.photo ? 'block' : 'none';
+            return;
+        }
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            newPhotoData = e.target.result;
+            avatarPreview.src = newPhotoData;
+            avatarPreview.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+    });
 
     function closeModal() {
         profileModal.style.display = 'none';
@@ -87,7 +122,8 @@ document.addEventListener('DOMContentLoaded', function() {
             description: descriptionInput.value.trim() || defaultProfile.description,
             likedSongs: parseInt(likedSongsInput.value, 10) || 0,
             playlistsCreated: parseInt(playlistsCreatedInput.value, 10) || 0,
-            favoriteArtists: parseInt(favoriteArtistsInput.value, 10) || 0
+            favoriteArtists: parseInt(favoriteArtistsInput.value, 10) || 0,
+            photo: newPhotoData || profileData.photo || ''
         };
         localStorage.setItem('profileData', JSON.stringify(profileData));
         renderProfile();

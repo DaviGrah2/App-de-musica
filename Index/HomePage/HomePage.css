@@ -18,6 +18,86 @@ body {
     min-height: 100vh;
 }
 
+.AppContainer,
+.AppShell {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: fadeIn 0.85s ease-out forwards;
+}
+
+.HeroCard,
+.FeaturedCard,
+.PlaylistCard,
+.ArtistCard,
+.StatCard,
+.RelatedCard,
+.ModalContent,
+.ProfileCard {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: fadeInUp 0.85s ease-out forwards;
+}
+
+.PlaceholderImage {
+    animation: float 9s ease-in-out infinite;
+}
+
+button,
+.UserBtn,
+.BtnEntrar,
+.AddPlaylistBtn,
+.ArtistCard button,
+.BtnPrimary,
+.BtnSecondary,
+.NavLink {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, color 0.25s ease, background 0.25s ease;
+}
+
+button:hover,
+.UserBtn:hover,
+.BtnEntrar:hover,
+.AddPlaylistBtn:hover,
+.ArtistCard button:hover,
+.BtnPrimary:hover,
+.BtnSecondary:hover,
+.NavLink:hover {
+    transform: translateY(-1px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+
+
 .AppContainer {
     display: flex;
     flex-direction: column;

@@ -115,7 +115,14 @@
             <div class="ModalContent">
                 <button class="CloseModal" id="closeModalBtn">×</button>
                 <h2>Personalizar Perfil</h2>
+                <div class="AvatarPreviewContainer">
+                    <img id="avatarPreview" class="AvatarPreview" src="" alt="Pré-visualização da foto de perfil">
+                </div>
                 <form id="profileForm">
+                    <div class="FormGroup">
+                        <label for="profilePhoto">Foto do Perfil</label>
+                        <input id="profilePhoto" type="file" accept="image/*">
+                    </div>
                     <div class="FormGroup">
                         <label for="profileName">Nome</label>
                         <input id="profileName" type="text" placeholder="Seu nome" required>
