@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Wavefy</title>
+    <link rel="stylesheet" href="Perfil.css">
+</head>
+<body>
+    <div class="AppContainer">
+        <header class="Header">
+            <div class="HeaderContent">
+                <h1 class="Logo">Wavefy</h1>
+                <nav class="NavMenu">
+                    <a href="../HomePage/HomePage.html" class="NavLink">Inicio</a>
+                    <a href="../Playlists/playlists.html" class="NavLink">Playlists</a>
+                    <a href="../Artistas/artistas.html" class="NavLink">Artistas</a>
+                    <a href="../Favoritos/favoritos.html" class="NavLink">Favoritos</a>
+                </nav>
+                <button id="editProfileBtn" class="UserBtn" type="button">Editar Perfil</button>
+            </div>
+        </header>
+
+        <main class="MainContent">
+            <section class="FeaturedSection">
+                <div class="FeaturedCard ProfileCard">
+                    <div class="ProfileAvatar">GD</div>
+                    <div class="FeaturedInfo ProfileInfo">
+                        <p class="FeaturedLabel">Perfil</p>
+                        <h2 class="FeaturedTitle">Gabriel Davi</h2>
+                        <p class="FeaturedDesc">Bem-vindo ao seu espaço musical. Veja suas estatísticas, playlists favoritas e artistas que você mais escuta.</p>
+                        <div class="ProfileMeta">
+                            <span>Assinatura Wavefy+</span>
+                            <span>Plano: Premium</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="StatsSection">
+                <div class="StatsGrid">
+                    <div class="StatCard">
+                        <p class="StatValue">128</p>
+                        <p class="StatLabel">Músicas curtidas</p>
+                    </div>
+                    <div class="StatCard">
+                        <p class="StatValue">12</p>
+                        <p class="StatLabel">Playlists criadas</p>
+                    </div>
+                    <div class="StatCard">
+                        <p class="StatValue">34</p>
+                        <p class="StatLabel">Artistas favoritos</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="PlaylistsSection">
+                <h2 class="SectionTitle">Suas Playlists</h2>
+                <div class="PlaylistsGrid">
+                    <div class="PlaylistCard">
+                        <div class="PlaylistImage">🎧</div>
+                        <h3 class="PlaylistTitle">Chill Vibes</h3>
+                        <p class="PlaylistDesc">28 músicas</p>
+                    </div>
+                    <div class="PlaylistCard">
+                        <div class="PlaylistImage">🔥</div>
+                        <h3 class="PlaylistTitle">Batalhas</h3>
+                        <p class="PlaylistDesc">35 músicas</p>
+                    </div>
+                    <div class="PlaylistCard">
+                        <div class="PlaylistImage">🌙</div>
+                        <h3 class="PlaylistTitle">Noite Wave</h3>
+                        <p class="PlaylistDesc">18 músicas</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="ArtistsSection">
+                <h2 class="SectionTitle">Artistas Mais Escutados</h2>
+                <div class="ArtistsGrid">
+                    <div class="ArtistCard">
+                        <div class="ArtistImage">👤</div>
+                        <h3 class="ArtistName">Artista A</h3>
+                        <p class="ArtistGenre">Pop / Eletrônico</p>
+                    </div>
+                    <div class="ArtistCard">
+                        <div class="ArtistImage">👤</div>
+                        <h3 class="ArtistName">Artista C</h3>
+                        <p class="ArtistGenre">Rock / Indie</p>
+                    </div>
+                    <div class="ArtistCard">
+                        <div class="ArtistImage">👤</div>
+                        <h3 class="ArtistName">Artista B</h3>
+                        <p class="ArtistGenre">Hip-Hop / Rap</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="RelatedSection">
+                <h2 class="SectionTitle">Artistas Relacionados</h2>
+                <div class="RelatedGrid">
+                    <div class="RelatedCard">Artista D</div>
+                    <div class="RelatedCard">Artista E</div>
+                    <div class="RelatedCard">Artista F</div>
+                    <div class="RelatedCard">Artista G</div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="Footer">
+            <p>&copy; 2026 Wavefy. Todos os direitos reservados.</p>
+        </footer>
+
+        <div class="Modal" id="profileModal">
+            <div class="ModalContent">
+                <button class="CloseModal" id="closeModalBtn">×</button>
+                <h2>Personalizar Perfil</h2>
+                <form id="profileForm">
+                    <div class="FormGroup">
+                        <label for="profileName">Nome</label>
+                        <input id="profileName" type="text" placeholder="Seu nome" required>
+                    </div>
+                    <div class="FormGroup">
+                        <label for="profilePlan">Plano</label>
+                        <input id="profilePlan" type="text" placeholder="Premium" required>
+                    </div>
+                    <div class="FormGroup">
+                        <label for="profileSubscription">Assinatura</label>
+                        <input id="profileSubscription" type="text" placeholder="Wavefy+" required>
+                    </div>
+                    <div class="FormGroup">
+                        <label for="profileDescription">Descrição</label>
+                        <input id="profileDescription" type="text" placeholder="Breve bio do perfil" required>
+                    </div>
+                    <div class="FormGroup">
+                        <label for="profileLikedSongs">Músicas Curtidas</label>
+                        <input id="profileLikedSongs" type="number" min="0" required>
+                    </div>
+                    <div class="FormGroup">
+                        <label for="profilePlaylistsCreated">Playlists Criadas</label>
+                        <input id="profilePlaylistsCreated" type="number" min="0" required>
+                    </div>
+                    <div class="FormGroup">
+                        <label for="profileFavoriteArtists">Artistas Favoritos</label>
+                        <input id="profileFavoriteArtists" type="number" min="0" required>
+                    </div>
+                    <div class="FormActions">
+                        <button type="button" class="Btn BtnSecondary" id="cancelProfileBtn">Cancelar</button>
+                        <button type="submit" class="Btn BtnPrimary">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="Perfil.js"></script>
+</body>
+</html>

@@ -24,7 +24,6 @@ body {
     min-height: 100vh;
 }
 
-/* Header */
 .Header {
     background: rgba(12, 15, 35, 0.85);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -103,7 +102,6 @@ body {
     box-shadow: 0 12px 30px rgba(63, 209, 255, 0.2);
 }
 
-/* Main Content */
 .MainContent {
     flex: 1;
     max-width: 1400px;
@@ -112,16 +110,22 @@ body {
     padding: 60px 40px;
 }
 
-/* Featured Section */
 .FeaturedSection {
-    margin-bottom: 80px;
+    margin-bottom: 60px;
 }
 
-.FeaturedCard {
+.FeaturedCard,
+.StatCard,
+.PlaylistCard,
+.ArtistCard,
+.RelatedCard {
     background: rgba(18, 24, 54, 0.9);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 24px;
     backdrop-filter: blur(16px);
+}
+
+.FeaturedCard {
     padding: 40px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -129,22 +133,27 @@ body {
     align-items: center;
 }
 
-.FeaturedImage {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.ProfileCard {
+    grid-template-columns: 0.6fr 1.4fr;
 }
 
-.PlaceholderImage {
-    width: 300px;
-    height: 300px;
-    border-radius: 16px;
+.ProfileAvatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 32px;
     background: linear-gradient(135deg, rgba(122, 92, 255, 0.3), rgba(63, 209, 255, 0.3));
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 120px;
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.85);
     border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.FeaturedInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .FeaturedLabel {
@@ -170,25 +179,45 @@ body {
     margin-bottom: 28px;
 }
 
-.PlayBtn {
-    background: linear-gradient(135deg, #7a5cff, #3fd1ff);
-    color: #ffffff;
-    border: none;
-    padding: 16px 40px;
+.ProfileMeta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+}
+
+.ProfileMeta span {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 10px 14px;
     border-radius: 999px;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    box-shadow: 0 12px 30px rgba(63, 209, 255, 0.2);
 }
 
-.PlayBtn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 18px 40px rgba(63, 209, 255, 0.3);
+.StatsSection {
+    margin-bottom: 60px;
 }
 
-/* Sections */
+.StatsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.StatCard {
+    padding: 28px 24px;
+    text-align: center;
+}
+
+.StatValue {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.StatLabel {
+    color: rgba(255, 255, 255, 0.7);
+}
+
 .SectionTitle {
     font-size: 2rem;
     font-weight: 800;
@@ -206,94 +235,55 @@ body {
     border-radius: 2px;
 }
 
-/* Playlists Grid */
-.PlaylistsSection {
-    margin-bottom: 80px;
-}
-
-.PlaylistsGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 24px;
-}
-
-.PlaylistCard {
-    background: rgba(18, 24, 54, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    padding: 24px;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    backdrop-filter: blur(16px);
-}
-
-.PlaylistCard:hover {
-    transform: translateY(-8px);
-    border-color: rgba(63, 209, 255, 0.3);
-    box-shadow: 0 20px 50px rgba(63, 209, 255, 0.15);
-}
-
-.PlaylistImage {
-    font-size: 64px;
-    margin-bottom: 16px;
-}
-
-.PlaylistTitle {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-
-.PlaylistDesc {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.9rem;
-}
-
-/* Artists Grid */
-.ArtistsSection {
+.PlaylistsSection,
+.ArtistsSection,
+.RelatedSection {
     margin-bottom: 60px;
 }
 
-.ArtistsGrid {
+.PlaylistsGrid,
+.ArtistsGrid,
+.RelatedGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 24px;
 }
 
-.ArtistCard {
-    background: rgba(18, 24, 54, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
+.PlaylistCard,
+.ArtistCard,
+.RelatedCard {
     padding: 24px;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    backdrop-filter: blur(16px);
 }
 
-.ArtistCard:hover {
-    transform: translateY(-8px);
-    border-color: rgba(122, 92, 255, 0.3);
-}
-
+.PlaylistImage,
 .ArtistImage {
     font-size: 64px;
     margin-bottom: 16px;
 }
 
+.PlaylistTitle,
 .ArtistName {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 8px;
 }
 
-.ArtistGenre {
+.PlaylistDesc,
+.ArtistGenre,
+.ArtistListens {
     color: rgba(255, 255, 255, 0.6);
-    font-size: 0.85rem;
+    font-size: 0.95rem;
 }
 
-/* Footer */
+.RelatedCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
 .Footer {
     background: rgba(12, 15, 35, 0.85);
     border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -303,7 +293,91 @@ body {
     font-size: 0.9rem;
 }
 
-/* Responsive */
+.Modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.ModalContent {
+    background: rgba(18, 24, 54, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 24px;
+    width: 100%;
+    max-width: 600px;
+    padding: 32px;
+    position: relative;
+}
+
+.CloseModal {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.FormGroup {
+    margin-bottom: 18px;
+}
+
+.FormGroup label {
+    display: block;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.FormGroup input {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+}
+
+.FormGroup input::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.FormActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.Btn {
+    border: none;
+    border-radius: 999px;
+    padding: 12px 22px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.BtnPrimary {
+    background: linear-gradient(135deg, #7a5cff, #3fd1ff);
+    color: #fff;
+}
+
+.BtnSecondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
 @media (max-width: 1024px) {
     .HeaderContent {
         padding: 0 24px;
@@ -323,10 +397,12 @@ body {
         padding: 32px 24px;
     }
 
-    .PlaceholderImage {
-        width: 200px;
-        height: 200px;
-        font-size: 80px;
+    .ProfileCard {
+        grid-template-columns: 1fr;
+    }
+
+    .StatsGrid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     }
 }
 
@@ -343,14 +419,14 @@ body {
         font-size: 1.5rem;
     }
 
+    .StatsGrid {
+        grid-template-columns: 1fr;
+    }
+
     .PlaylistsGrid,
-    .ArtistsGrid {
+    .ArtistsGrid,
+    .RelatedGrid {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 16px;
     }
-}
-
-.Perfil{
-    color: #ffffff;
-    text-decoration: none;
 }
