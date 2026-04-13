@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlists - Wavefy</title>
+    <link rel="stylesheet" href="playlists.css">
+</head>
+<body>
+    <div class="AppContainer">
+        <!-- Header -->
+        <header class="Header">
+            <div class="HeaderContent">
+                <h1 class="Logo">Wavefy</h1>
+                <nav class="NavMenu">
+                    <a href="../HomePage/HomePage.html" class="NavLink">Inicio</a>
+                    <a href="#" class="NavLink">Playlists</a>
+                    <a href="../Artistas/artistas.html" class="NavLink">Artistas</a>
+                    <a href="../Favoritos/favoritos.html" class="NavLink">Favoritos</a>
+                </nav>
+                <input type="text" placeholder="Pesquisar músicas, artistas..." class="SearchInput">
+                <button class="UserBtn" type="button">Perfil</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="MainContent">
+            <!-- Featured Section -->
+            <section class="FeaturedSection">
+                <div class="FeaturedCard">
+                    <div class="FeaturedImage">
+                        <div class="PlaceholderImage">🎵</div>
+                    </div>
+                    <div class="FeaturedInfo">
+                        <p class="FeaturedLabel">Gerencie Suas Playlists</p>
+                        <h2 class="FeaturedTitle">Crie e Organize</h2>
+                        <p class="FeaturedDesc">Adicione novas playlists, músicas e ouça suas favoritas. Tudo em um só lugar.</p>
+                        <button class="AddPlaylistBtn">+ Adicionar Playlist</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Playlists Section -->
+            <section class="PlaylistsSection">
+                <h2 class="SectionTitle">Minhas Playlists</h2>
+                <div class="PlaylistsGrid">
+                    <!-- Playlists serão renderizadas aqui via JS -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="Footer">
+            <p>&copy; 2026 Wavefy. Todos os direitos reservados.</p>
+        </footer>
+
+        <!-- Modal -->
+        <div class="Modal">
+            <div class="ModalContent">
+                <!-- Conteúdo do modal será inserido via JS -->
+            </div>
+        </div>
+    </div>
+    <script src="playlists.js"></script>
+</body>
+</html>

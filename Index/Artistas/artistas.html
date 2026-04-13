@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artistas - Wavefy</title>
+    <link rel="stylesheet" href="artistas.css">
+</head>
+<body>
+    <div class="AppContainer">
+        <!-- Header -->
+        <header class="Header">
+            <div class="HeaderContent">
+                <h1 class="Logo">Wavefy</h1>
+                <nav class="NavMenu">
+                    <a href="../HomePage/HomePage.html" class="NavLink">Inicio</a>
+                    <a href="../Playlists/playlists.html" class="NavLink">Playlists</a>
+                    <a href="#" class="NavLink">Artistas</a>
+                    <a href="../Favoritos/favoritos.html" class="NavLink">Favoritos</a>
+                </nav>
+                <input type="text" placeholder="Pesquisar artistas..." class="SearchInput">
+                <button class="UserBtn" type="button">Perfil</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="MainContent">
+            <!-- Featured Section -->
+            <section class="FeaturedSection">
+                <div class="FeaturedCard">
+                    <div class="FeaturedImage">
+                        <div class="PlaceholderImage">🎤</div>
+                    </div>
+                    <div class="FeaturedInfo">
+                        <p class="FeaturedLabel">Descubra Artistas</p>
+                        <h2 class="FeaturedTitle">Explore Novos Sons</h2>
+                        <p class="FeaturedDesc">Veja artistas em alta, os mais ouvidos por você e recomendações personalizadas.</p>
+                        <button class="PlayBtn">▶ Explorar</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Top Artists Section -->
+            <section class="ArtistsSection TopArtistsSection">
+                <h2 class="SectionTitle">Artistas em Alta</h2>
+                <div class="ArtistsGrid">
+                    <!-- Artistas serão renderizados aqui via JS -->
+                </div>
+            </section>
+
+            <!-- Most Listened Section -->
+            <section class="ArtistsSection MostListenedSection">
+                <h2 class="SectionTitle">Artistas Mais Ouvidos</h2>
+                <div class="ArtistsGrid">
+                    <!-- Artistas serão renderizados aqui via JS -->
+                </div>
+            </section>
+
+            <!-- Related Artists Section -->
+            <section class="ArtistsSection RelatedArtistsSection">
+                <h2 class="SectionTitle">Artistas Relacionados</h2>
+                <div class="ArtistsGrid">
+                    <!-- Artistas serão renderizados aqui via JS -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="Footer">
+            <p>&copy; 2026 Wavefy. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+    <script src="artistas.js"></script>
+</body>
+</html>
