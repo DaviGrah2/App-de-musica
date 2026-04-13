@@ -103,22 +103,6 @@ body {
     box-shadow: 0 12px 30px rgba(63, 209, 255, 0.2);
 }
 
-.SearchInput {
-    padding: 8px 16px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    font-size: 14px;
-    width: 200px;
-    outline: none;
-    margin-right: 20px;
-}
-
-.SearchInput::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-}
-
 /* Main Content */
 .MainContent {
     flex: 1;
