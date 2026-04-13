@@ -17,6 +17,7 @@
                     <a href="../Artistas/artistas.html" class="NavLink">Artistas</a>
                     <a href="../Favoritos/favoritos.html" class="NavLink">Favoritos</a>
                 </nav>
+                <button class="SettingsBtn" type="button">⚙️</button>
                 <button id="editProfileBtn" class="UserBtn" type="button">Editar Perfil</button>
             </div>
         </header>
@@ -110,6 +111,42 @@
         <footer class="Footer">
             <p>&copy; 2026 Wavefy. Todos os direitos reservados.</p>
         </footer>
+
+        <!-- Settings Modal -->
+        <div class="SettingsModal" id="settingsModal">
+            <div class="ModalContent">
+                <h2>Configurações</h2>
+                <section class="SettingsSection">
+                    <h3>Tema</h3>
+                    <button id="toggleTheme" class="SettingsBtn">Alternar Modo Claro/Escuro</button>
+                </section>
+                <section class="SettingsSection">
+                    <h3>Créditos</h3>
+                    <p><strong>Desenvolvimento:</strong> Davi Grah</p>
+                    <p><strong>Design:</strong> Equipe Wavefy</p>
+                    <p><strong>Música:</strong> Biblioteca de demonstração</p>
+                    <p><strong>Tecnologias:</strong> HTML5, CSS3, JavaScript</p>
+                </section>
+                <section class="SettingsSection">
+                    <h3>Conta</h3>
+                    <button id="logout" class="SettingsBtn">Fazer Logout</button>
+                    <button id="deleteAccount" class="SettingsBtn danger">Excluir Conta</button>
+                </section>
+                <section class="SettingsSection">
+                    <h3>Suporte</h3>
+                    <p>Email: support@wavefy.com</p>
+                    <p>Telefone: (11) 9999-9999</p>
+                </section>
+                <section class="SettingsSection">
+                    <h3>Redes Sociais</h3>
+                    <a href="https://instagram.com/wavefy" target="_blank" class="SocialLink">Instagram</a>
+                    <a href="https://twitter.com/wavefy" target="_blank" class="SocialLink">Twitter</a>
+                    <a href="https://facebook.com/wavefy" target="_blank" class="SocialLink">Facebook</a>
+                    <a href="https://youtube.com/wavefy" target="_blank" class="SocialLink">YouTube</a>
+                </section>
+                <button id="closeSettings" class="CloseBtn">Fechar</button>
+            </div>
+        </div>
 
         <div class="Modal" id="profileModal">
             <div class="ModalContent">

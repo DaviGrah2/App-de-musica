@@ -183,6 +183,23 @@ button:hover,
     box-shadow: 0 12px 30px rgba(63, 209, 255, 0.2);
 }
 
+.SettingsBtn {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: color 0.25s ease, background 0.25s ease;
+}
+
+.SettingsBtn:hover {
+    color: #3fd1ff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
 .SearchInput {
     padding: 8px 16px;
     border-radius: 20px;
@@ -449,4 +466,154 @@ button:hover,
 .Perfil{
     color: #ffffff;
     text-decoration: none;
+}
+
+/* Settings Modal */
+.SettingsModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.SettingsModal.show {
+    display: flex;
+}
+
+.ModalContent {
+    background: rgba(18, 24, 54, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 32px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    backdrop-filter: blur(16px);
+}
+
+.ModalContent h2 {
+    color: #ffffff;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.SettingsSection {
+    margin-bottom: 24px;
+}
+
+.SettingsSection h3 {
+    color: #3fd1ff;
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+.SettingsSection p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 8px;
+}
+
+.SettingsBtn {
+    background: linear-gradient(135deg, #7a5cff, #3fd1ff);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: transform 0.25s ease;
+}
+
+.SettingsBtn:hover {
+    transform: translateY(-2px);
+}
+
+.SettingsBtn.danger {
+    background: linear-gradient(135deg, #ff5c5c, #ff8c8c);
+}
+
+.SocialLink {
+    color: #3fd1ff;
+    text-decoration: none;
+    margin-right: 16px;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.SocialLink:hover {
+    text-decoration: underline;
+}
+
+.CloseBtn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    display: block;
+    margin: 24px auto 0;
+    transition: background 0.25s ease;
+}
+
+.CloseBtn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Light Mode */
+body.light-mode {
+    background: linear-gradient(180deg, #f0f4f8 0%, #e1e8ed 100%);
+    color: #333333;
+}
+
+body.light-mode .Header {
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .NavLink {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+body.light-mode .NavLink:hover {
+    color: #7a5cff;
+}
+
+body.light-mode .SearchInput {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+body.light-mode .SearchInput::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+body.light-mode .PlaylistCard,
+body.light-mode .ArtistCard {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .ModalContent {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .ModalContent h2,
+body.light-mode .SettingsSection h3 {
+    color: #333;
+}
+
+body.light-mode .SettingsSection p {
+    color: rgba(0, 0, 0, 0.8);
 }
